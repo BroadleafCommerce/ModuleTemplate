@@ -2,16 +2,22 @@
 
 A sample Broadleaf module that has default placeholders for most of the relevant files a module might need.
 
-## How to use
+## Basic setup of a new module
 
 1. Make a copy of this project.
 
-2. Rename instances of MYMODULE to something more appropriate.
+2. Remove the `.git` folder from the copy
 
-> There are a lot of instances of MYMODULE, including some directory names, so using an IDE's search function is recommended.
+3. Before importing into your IDE, edit pom.xml in a text editor and replace MYMODULE with the appropriate module name
 
-3. Remove all placeholder.git files once actual things reside in those directories.
+4. Import into your IDE
 
-4. If this module will not need to weave in any transformations to Broadleaf entities that reside outside of this module, you may combine `bl-MYMODULE-applicationContext.xml` and `bl-MYMODULE-base-applicationContext.xml`
+5. Find and replace all instances of MYMODULE (file names, directory names, and contents of files) with the appropriate module name.
 
-5. Clean up any placeholder files that you're not leveraging. Any empty files or instances of MYMODULE should not exist.
+6. Delete all placeholder.git files
+
+## Next steps for a new module
+
+This skeleton template has a lot of files. You might not be using all of them. For example, if the module doesn't do any weaving into core Broadleaf entities, you are able to combine `bl-MYMODULE-applicationContext.xml` and `bl-MYMODULE-base-applicationContext.xml`. If you don't have any special caching configuration, you can remove the ehcache file as well as the reference to it in the XML files.
+
+Basically, don't check in unneeded things. Be dilligent about your work and clean up things that don't belong.
