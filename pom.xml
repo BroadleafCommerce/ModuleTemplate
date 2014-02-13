@@ -25,7 +25,15 @@
     <version>1.0.0-SNAPSHOT</version>
 
     <description>BroadleafCommerce MYMODULE</description>
-    <url>http://www.broadleafcommerce.org</url>
+    <url>http://www.broadleafcommerce.com</url>
+    <licenses>
+        <license>
+            <name>Broadleaf Commerce Confidential</name>
+            <url>http://www.broadleafcommerce.com/license/commercial</url>
+            <distribution>repo</distribution>
+            <comments>Broadleaf Commerce Commercial License</comments>
+        </license>
+    </licenses>
     <developers>
         <developer>
             <id>jeff</id>
@@ -56,7 +64,8 @@
     </developers>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <blc.version>3.0.0-GA</blc.version>
+        <blc.version>3.1.0-GA</blc.version>
+        <project.uri>${user.dir}</project.uri>
     </properties>
     <scm>
         <connection>scm:git:git@github.com:BroadleafCommerce/MYMODULE.git</connection>
@@ -89,8 +98,8 @@
                 </plugin>
                 <plugin>
                     <groupId>org.zeroturnaround</groupId>
-                    <artifactId>javarebel-maven-plugin</artifactId>
-                    <version>1.0.5</version>
+                    <artifactId>jrebel-maven-plugin</artifactId>
+                    <version>1.1.5</version>
                     <dependencies>
                         <dependency>
                             <groupId>org.codehaus.plexus</groupId>
@@ -133,6 +142,61 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.2.1</version>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>1.5</version>
+                <configuration>
+                    <verbose>false</verbose>
+                    <addSvnKeyWords>false</addSvnKeyWords>
+                    <addJavaLicenseAfterPackage>false</addJavaLicenseAfterPackage>
+                    <organizationName>Broadleaf Commerce</organizationName>
+                    <inceptionYear>2009</inceptionYear>
+                    <licenseName>blc_confidential</licenseName>
+                    <licenseResolver>file:${project.uri}/licenses</licenseResolver>
+                    <excludes>
+                        <exclude>**/*.sql</exclude>
+                        <exclude>**/*.html</exclude>
+                        <exclude>**/*font-awesome*</exclude>
+                        <exclude>**/*jquery*</exclude>
+                        <exclude>**/*modernizr*</exclude>
+                        <exclude>**/*responsive-tables*</exclude>
+                        <exclude>**/spectrum.css</exclude>
+                        <exclude>**/spectrum.js</exclude>
+                        <exclude>**/redactor.js</exclude>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>first</id>
+                        <goals>
+                            <goal>update-file-header</goal>
+                            <goal>update-project-license</goal>
+                        </goals>
+                        <phase>process-sources</phase>
+                        <configuration>
+                            <roots>
+                                <root>src/main</root>
+                                <root>src/test</root>
+                            </roots>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
     <distributionManagement>
@@ -150,9 +214,8 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.8</version>
+                <version>2.9.1</version>
                 <configuration>
-                    <aggregate>true</aggregate>
                     <minmemory>128m</minmemory>
                     <maxmemory>1g</maxmemory>
                 </configuration>
@@ -196,7 +259,7 @@
                 <plugins>
                     <plugin>
                         <groupId>org.zeroturnaround</groupId>
-                        <artifactId>javarebel-maven-plugin</artifactId>
+                        <artifactId>jrebel-maven-plugin</artifactId>
                         <executions>
                             <execution>
                                 <id>generate-rebel-xml</id>
