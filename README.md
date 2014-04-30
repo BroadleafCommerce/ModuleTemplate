@@ -12,7 +12,12 @@ A sample Broadleaf module that has default placeholders for most of the relevant
 
 4. Import into your IDE
 
-5. Find and replace all instances of MYMODULE (file names, directory names, and contents of files) with the appropriate module name.
+5. Find and replace all instances of MYMODULE (file names, directory names, and contents of files) with the appropriate module name.   Below is a helpful unix command for renaming the files ... change "new-module-name" to your module name.
+
+```
+for i in `find . | grep MYMODULE`; do mv $i `echo $i | sed "s/MYMODULE/new-module-name/g"`;done
+
+```
 
 6. Delete all placeholder.git files
 
