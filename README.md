@@ -19,7 +19,10 @@ for i in `find . | grep MYMODULE`; do mv $i `echo $i | sed "s/MYMODULE/new-modul
 
 ```
 
-6. Delete all placeholder.git files
+7.  Reserve Module ID range (all SQL that originates from this module should use IDs in this range.)   Update the following file ... 
+https://github.com/BroadleafCommerce/docs-internal/blob/master/Module%20IDs.md
+
+8. Delete all placeholder.git files
 
 ## Next steps for a new module
 
