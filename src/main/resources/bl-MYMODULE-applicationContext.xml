@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!--
-  ~ Broadleaf Commerce Confidential
-  ~ _______________________________
-  ~
-  ~ [2009] - [2013] Broadleaf Commerce, LLC
-  ~ All Rights Reserved.
-  ~
-  ~ NOTICE:  All information contained herein is, and remains
-  ~ the property of Broadleaf Commerce, LLC
-  ~ The intellectual and technical concepts contained
-  ~ herein are proprietary to Broadleaf Commerce, LLC
-  ~ and may be covered by U.S. and Foreign Patents,
-  ~ patents in process, and are protected by trade secret or copyright law.
-  ~ Dissemination of this information or reproduction of this material
-  ~ is strictly forbidden unless prior written permission is obtained
-  ~ from Broadleaf Commerce, LLC.
+  #%L
+  BroadleafCommerce MYMODULE
+  %%
+  Copyright (C) 2009 - 2017 Broadleaf Commerce
+  %%
+  Licensed under the Broadleaf End User License Agreement (EULA), Version 1.1
+  (the "Commercial License" located at http://license.broadleafcommerce.org/commercial_license-1.1.txt).
+  
+  Alternatively, the Commercial License may be replaced with a mutually agreed upon license (the "Custom License")
+  between you and Broadleaf Commerce. You may not use this file except in compliance with the applicable license.
+  
+  NOTICE:  All information contained herein is, and remains
+  the property of Broadleaf Commerce, LLC
+  The intellectual and technical concepts contained
+  herein are proprietary to Broadleaf Commerce, LLC
+  and may be covered by U.S. and Foreign Patents,
+  patents in process, and are protected by trade secret or copyright law.
+  Dissemination of this information or reproduction of this material
+  is strictly forbidden unless prior written permission is obtained
+  from Broadleaf Commerce, LLC.
+  #L%
   -->
+
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -30,96 +36,5 @@
         http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 
     <import resource="classpath:/bl-MYMODULE-base-applicationContext.xml" />
-     <!-- 
-
-     This bl-MYMODULE-applicationContext.xml will normally be used by clients. The purpose of this file was to also 
-     include JPA transformation configuration and other configurations deemed to be optional.
-     
-     If the user does not want JPA transformation configuration and other additional configurations that will be defined in this file, then
-     they can use the bl-MYMODULE-base-applicationContext.xml instead.
-
-     This file should only hold weave-related declarations
-     -->
-
-    <!--
-        These beans are responsible for contributing functionality to the multitenant module. They are dormant
-        unless the multitenant module is loaded
-
-        If your module does not have any entities that must be discriminated on, delete everything below here
-     -->
-
-     <!--
-    <bean class="org.broadleafcommerce.common.extensibility.context.merge.EarlyStageMergeBeanPostProcessor">
-        <property name="collectionRef" value="blThemeMultiTenantXFormTemplates"/>
-        <property name="targetRef" value="blMultiTenantXFormTemplates"/>
-        <property name="statusProvider" ref="blMultiTenantMergeBeanStatusProvider"/>
-    </bean>
-
-    <bean id="blThemeMultiTenantXFormTemplates" class="org.springframework.beans.factory.config.MapFactoryBean" lazy-init="true">
-        <property name="sourceMap">
-            <map>
-                <entry key="com.broadleafcommerce.theme.domain.ThemeConfigurationImpl"
-                       value="com.broadleafcommerce.tenant.weave.WeaveSiteDiscriminatorImpl"/>
-                <entry key="com.broadleafcommerce.theme.domain.ThemeDefinitionImpl"
-                       value="com.broadleafcommerce.tenant.weave.WeaveSiteDiscriminatorImpl"/>
-            </map>
-        </property>
-    </bean>
-
-    <bean class="org.broadleafcommerce.common.extensibility.context.merge.EarlyStageMergeBeanPostProcessor">
-        <property name="collectionRef" value="blThemeMultiTenantFilterDefinitions"/>
-        <property name="targetRef" value="blMultiTenantFilterDefinitions"/>
-        <property name="statusProvider" ref="blMultiTenantMergeBeanStatusProvider"/>
-    </bean>
-
-    <bean id="blThemeMultiTenantFilterDefinitions" class="org.springframework.beans.factory.config.ListFactoryBean" lazy-init="true">
-        <property name="sourceList">
-            <list>
-                <bean class="org.broadleafcommerce.common.filter.FilterDefinition" parent="siteFilterDef">
-                    <property name="entityImplementationClassName" value="com.broadleafcommerce.theme.domain.ThemeConfigurationImpl"/>
-                </bean>
-                <bean class="org.broadleafcommerce.common.filter.FilterDefinition" parent="siteFilterDef">
-                    <property name="entityImplementationClassName" value="com.broadleafcommerce.theme.domain.ThemeDefinitionImpl"/>
-                </bean>
-            </list>
-        </property>
-    </bean>
-
-    <bean class="org.broadleafcommerce.common.extensibility.context.merge.EarlyStageMergeBeanPostProcessor">
-        <property name="collectionRef" value="blThemeMultiTenantFilters"/>
-        <property name="targetRef" value="blMultiTenantFilters"/>
-        <property name="statusProvider" ref="blMultiTenantMergeBeanStatusProvider"/>
-    </bean>
-
-    <bean id="blThemeMultiTenantFilters" class="org.springframework.beans.factory.config.ListFactoryBean" lazy-init="true">
-        <property name="sourceList">
-            <list>
-                <bean class="org.broadleafcommerce.common.filter.Filter" parent="sitePropertyFilterConfig">
-                    <property name="entityImplementationClassName" value="com.broadleafcommerce.theme.domain.ThemeConfigurationImpl"/>
-                </bean>
-                <bean class="org.broadleafcommerce.common.filter.Filter" parent="sitePropertyFilterConfig">
-                    <property name="entityImplementationClassName" value="com.broadleafcommerce.theme.domain.ThemeDefinitionImpl"/>
-                </bean>
-            </list>
-        </property>
-    </bean>
-
-    <bean class="org.broadleafcommerce.common.extensibility.context.merge.LateStageMergeBeanPostProcessor">
-        <property name="collectionRef" value="blThemeSiteConfigProviders"/>
-        <property name="targetRef" value="blMultiTenantSiteConfigProviders"/>
-        <property name="statusProvider" ref="blMultiTenantMergeBeanStatusProvider"/>
-    </bean>
-
-    <bean id="blThemeSiteConfigProviders" class="org.springframework.beans.factory.config.ListFactoryBean" lazy-init="true">
-        <property name="sourceList">
-            <list>
-                <bean id="blThemeSiteConfigProvider" class="com.broadleafcommerce.theme.service.provider.ThemeSiteConfigProvider" />
-            </list>
-        </property>
-    </bean>
-    -->
-    <!--
-        End of multitenant module support
-    -->
 
 </beans>
