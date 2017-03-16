@@ -1,4 +1,13 @@
 target/
 .classpath
 .project
-.settings/
+.settings
+*.swp
+test-output
+.idea
+*.iml
+.metadata
+*.ipr
+bin/
+**/*maven-eclipse.xml
+**/*externalToolBuilders
