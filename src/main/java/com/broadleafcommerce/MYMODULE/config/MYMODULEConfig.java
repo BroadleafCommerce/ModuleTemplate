@@ -23,7 +23,6 @@
  */
 package com.broadleafcommerce.MYMODULE.config;
 
-import org.broadleafcommerce.common.config.FrameworkCommonPropertySource;
 import org.broadleafcommerce.common.extensibility.context.merge.Merge;
 import org.broadleafcommerce.common.logging.LifeCycleEvent;
 import org.broadleafcommerce.common.logging.ModuleLifecycleLoggingBean;
@@ -44,11 +43,6 @@ public class MYMODULEConfig {
         return new ModuleLifecycleLoggingBean(MYMODULEModuleRegistration.MODULE_NAME, LifeCycleEvent.LOADING);
     }
 
-    @Bean
-    public FrameworkCommonPropertySource blMYMODULEPropertySource() {
-        return new FrameworkCommonPropertySource("config/bc/MYMODULE");
-    }
-    
     @Merge(targetRef = "blMergedPersistenceXmlLocations", early = true)
     public List<String> blMYMODULEPersistenceXmlLocations() {
         return Arrays.asList("classpath*:/META-INF/persistence-MYMODULE.xml");
