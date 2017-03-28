@@ -1,4 +1,4 @@
-# Initial Configuration
+# Module Installation
 
 By following the steps below, ...
 

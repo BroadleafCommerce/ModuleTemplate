@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!--
   #%L
   BroadleafCommerce MYMODULE
@@ -22,14 +21,10 @@
   from Broadleaf Commerce, LLC.
   #L%
   -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <import resource="classpath:bl-MYMODULE-base-applicationContext.xml"/>
 
-<persistence xmlns="http://java.sun.com/xml/ns/persistence"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
-             version="2.0">
-    <persistence-unit name="blPU" transaction-type="RESOURCE_LOCAL">
-        <!-- <class>some entity for mymodule</class> -->
-        <exclude-unlisted-classes/>
-    </persistence-unit>
-</persistence>
+</beans>

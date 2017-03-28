@@ -1,0 +1,2 @@
+org.broadleafcommerce.common.module.BroadleafModuleRegistration=com.broadleafcommerce.MYMODULE.config.MYMODULEModuleRegistration
+org.broadleafcommerce.common.config.FrameworkCommonClasspathPropertySource=com.broadleafcommerce.MYMODULE.config.MYMODULEProperties
