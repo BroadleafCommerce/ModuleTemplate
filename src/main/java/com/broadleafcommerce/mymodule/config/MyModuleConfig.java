@@ -1,6 +1,6 @@
 /*-
  * #%L
- * BroadleafCommerce MYMODULE
+ * BroadleafCommerce My Module
  * %%
  * Copyright (C) 2009 - 2017 Broadleaf Commerce
  * %%
@@ -21,7 +21,7 @@
  * from Broadleaf Commerce, LLC.
  * #L%
  */
-package com.broadleafcommerce.MYMODULE.config;
+package com.broadleafcommerce.mymodule.config;
 
 import org.broadleafcommerce.common.extensibility.context.merge.Merge;
 import org.broadleafcommerce.common.logging.LifeCycleEvent;
@@ -35,26 +35,26 @@ import java.util.List;
 /**
  * @author
  */
-@Configuration("blMYMODULEModuleConfig")
-public class MYMODULEConfig {
+@Configuration("blMyModuleModuleConfig")
+public class MyModuleConfig {
 
     @Bean
-    public static ModuleLifecycleLoggingBean blMYMODULELifecycleBean() {
-        return new ModuleLifecycleLoggingBean(MYMODULEModuleRegistration.MODULE_NAME, LifeCycleEvent.LOADING);
+    public static ModuleLifecycleLoggingBean blMyModuleLifecycleBean() {
+        return new ModuleLifecycleLoggingBean(MyModuleModuleRegistration.MODULE_NAME, LifeCycleEvent.LOADING);
     }
 
     @Merge(targetRef = "blMergedPersistenceXmlLocations", early = true)
-    public List<String> blMYMODULEPersistenceXmlLocations() {
-        return Arrays.asList("classpath*:/META-INF/persistence-MYMODULE.xml");
+    public List<String> blMyModulePersistenceXmlLocations() {
+        return Arrays.asList("classpath*:/META-INF/persistence-my-module.xml");
     }
     
     @Merge(targetRef = "blMergedEntityContexts", early = true)
-    public List<String> blMYMODULEEntityContexts() {
-        return Arrays.asList("classpath:bl-MYMODULE-applicationContext-entity.xml");
+    public List<String> blMyModuleEntityContexts() {
+        return Arrays.asList("classpath:bl-my-module-applicationContext-entity.xml");
     }
 
     @Merge(targetRef = "blMergedCacheConfigLocations", early = true)
-    public List<String> blMYMODULEEhcache() {
-        return Arrays.asList("classpath:bl-MYMODULE-ehcache.xml");
+    public List<String> blMyModuleEhcache() {
+        return Arrays.asList("classpath:bl-my-module-ehcache.xml");
     }
 }

@@ -1,6 +1,6 @@
 /*-
  * #%L
- * BroadleafCommerce MYMODULE
+ * BroadleafCommerce My Module
  * %%
  * Copyright (C) 2009 - 2017 Broadleaf Commerce
  * %%
@@ -21,7 +21,7 @@
  * from Broadleaf Commerce, LLC.
  * #L%
  */
-package com.broadleafcommerce.MYMODULE.admin.config;
+package com.broadleafcommerce.mymodule.admin.config;
 
 import org.broadleafcommerce.common.admin.condition.ConditionalOnAdmin;
 import org.broadleafcommerce.common.extensibility.context.merge.Merge;
@@ -41,35 +41,35 @@ import java.util.List;
  * @author
  */
 @ConditionalOnAdmin
-@Configuration("blMYMODULEAdminConfig")
-public class MYMODULEAdminConfig {
+@Configuration("blMyModuleAdminConfig")
+public class MyModuleAdminConfig {
     
     @Merge(targetRef = "blMessageSourceBaseNames")
-    public List<String> blMYMODULEMessages() {
-        return Arrays.asList("classpath:/messages/MYMODULEMessages");
+    public List<String> blMyModuleMessages() {
+        return Arrays.asList("classpath:/messages/MyModuleMessages");
     }
     
     @ConditionalOnTemplating
     @Configuration
-    public static class MYMODULEsAdminFrontendConfig {
+    public static class MyModulesAdminFrontendConfig {
         
         @Autowired
         protected Environment env;
         
         @Merge(targetRef = "blJsLocations")
-        public List<String> blMYMODULEAdminJsLocations() {
-            return Arrays.asList("classpath:/MYMODULE_style/js/");
+        public List<String> blMyModuleAdminJsLocations() {
+            return Arrays.asList("classpath:/my_module_style/js/");
         }
         
         @Merge(targetRef = "blJsFileList")
-        public List<String> blMYMODULEAdminJsFileList() {
-            return Arrays.asList("admin/MYMODULE.js");
+        public List<String> blMyModuleAdminJsFileList() {
+            return Arrays.asList("admin/my-module.js");
         }
         
         @Bean
-        public BroadleafTemplateResolver blAdminMYMODULEClasspathTemplateResolver() {
+        public BroadleafTemplateResolver blAdminMyModuleClasspathTemplateResolver() {
             BroadleafClasspathTemplateResolver resolver = new BroadleafClasspathTemplateResolver();
-            resolver.setPrefix("MYMODULE_style/templates/admin/");
+            resolver.setPrefix("my_module_style/templates/admin/");
             resolver.setSuffix(".html");
             resolver.setTemplateMode(BroadleafTemplateMode.HTML);
             resolver.setCharacterEncoding("UTF-8");

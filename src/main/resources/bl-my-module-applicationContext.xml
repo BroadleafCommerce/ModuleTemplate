@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   #%L
-  BroadleafCommerce MYMODULE
+  BroadleafCommerce My Module
   %%
   Copyright (C) 2009 - 2017 Broadleaf Commerce
   %%
@@ -35,6 +35,6 @@
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 
-    <import resource="classpath:/bl-MYMODULE-base-applicationContext.xml" />
+    <import resource="classpath:/bl-my-module-base-applicationContext.xml" />
 
 </beans>

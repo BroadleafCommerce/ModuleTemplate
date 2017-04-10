@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   #%L
-  BroadleafCommerce MYMODULE
+  BroadleafCommerce My Module
   %%
   Copyright (C) 2009 - 2017 Broadleaf Commerce
   %%
@@ -28,8 +28,8 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
-    <context:component-scan base-package="com.broadleafcommerce.MYMODULE">
-        <context:exclude-filter type="regex" expression="com.broadleafcommerce.MYMODULE.admin.*"/>
+    <context:component-scan base-package="com.broadleafcommerce.mymodule">
+        <context:exclude-filter type="regex" expression="com.broadleafcommerce.mymodule.admin.*"/>
     </context:component-scan>
 
 </beans>

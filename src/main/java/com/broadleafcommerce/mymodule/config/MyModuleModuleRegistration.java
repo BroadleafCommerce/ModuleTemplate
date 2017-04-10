@@ -1,6 +1,6 @@
 /*-
  * #%L
- * BroadleafCommerce MYMODULE
+ * BroadleafCommerce My Module
  * %%
  * Copyright (C) 2009 - 2017 Broadleaf Commerce
  * %%
@@ -21,16 +21,16 @@
  * from Broadleaf Commerce, LLC.
  * #L%
  */
-package com.broadleafcommerce.MYMODULE.config;
+package com.broadleafcommerce.mymodule.config;
 
 import org.broadleafcommerce.common.module.BroadleafModuleRegistration;
 
 /**
  * @author
  */
-public class MYMODULEModuleRegistration implements BroadleafModuleRegistration {
+public class MyModuleModuleRegistration implements BroadleafModuleRegistration {
 
-    public static final String MODULE_NAME = "MYMODULE";
+    public static final String MODULE_NAME = "My Module";
     
     @Override
     public String getModuleName() {
