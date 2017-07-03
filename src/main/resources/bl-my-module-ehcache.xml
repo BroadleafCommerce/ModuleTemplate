@@ -1,6 +1,6 @@
 <!--
   #%L
-  BroadleafCommerce MYMODULE
+  BroadleafCommerce My Module
   %%
   Copyright (C) 2009 - 2017 Broadleaf Commerce
   %%
@@ -21,10 +21,7 @@
   from Broadleaf Commerce, LLC.
   #L%
   -->
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<ehcache>
 
-    <import resource="classpath:bl-MYMODULE-base-applicationContext.xml"/>
 
-</beans>
+</ehcache>

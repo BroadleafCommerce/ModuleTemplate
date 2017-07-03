@@ -1,6 +1,6 @@
 /*-
  * #%L
- * BroadleafCommerce MYMODULE
+ * BroadleafCommerce My Module
  * %%
  * Copyright (C) 2009 - 2017 Broadleaf Commerce
  * %%
@@ -21,7 +21,7 @@
  * from Broadleaf Commerce, LLC.
  * #L%
  */
-package com.broadleafcommerce.MYMODULE.demo;
+package com.broadleafcommerce.mymodule.demo;
 
 import org.broadleafcommerce.common.demo.AutoImportPersistenceUnit;
 import org.broadleafcommerce.common.demo.AutoImportSql;
@@ -35,18 +35,18 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @author
  */
-@Configuration("blMYMODULEData")
+@Configuration("blMyModuleData")
 @Conditional(ImportCondition.class)
 public class ImportSQLConfig {
 
     @Bean
-    public AutoImportSql blMYMODULESecurity() {
-        return new AutoImportSql(AutoImportPersistenceUnit.BL_PU, "config/bc/sql/load_MYMODULE_admin_security.sql", AutoImportStage.PRIMARY_MODULE_SECURITY);
+    public AutoImportSql blMyModuleSecurity() {
+        return new AutoImportSql(AutoImportPersistenceUnit.BL_PU, "config/bc/sql/load_my_module_admin_security.sql", AutoImportStage.PRIMARY_MODULE_SECURITY);
     }
 
     @Bean
     @Conditional(DemoCondition.class)
-    public AutoImportSql blMYMODULEDemoData() {
-        return new AutoImportSql(AutoImportPersistenceUnit.BL_PU,"config/bc/sql/samples/load_MYMODULE_demo_data.sql", AutoImportStage.PRIMARY_BASIC_DATA);
+    public AutoImportSql blMyModuleDemoData() {
+        return new AutoImportSql(AutoImportPersistenceUnit.BL_PU,"config/bc/sql/samples/load_my_module_demo_data.sql", AutoImportStage.PRIMARY_BASIC_DATA);
     }
 }

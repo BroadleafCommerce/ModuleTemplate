@@ -1,6 +1,6 @@
 /*-
  * #%L
- * BroadleafCommerce MYMODULE
+ * BroadleafCommerce My Module
  * %%
  * Copyright (C) 2009 - 2017 Broadleaf Commerce
  * %%
@@ -21,18 +21,20 @@
  * from Broadleaf Commerce, LLC.
  * #L%
  */
-package com.broadleafcommerce.MYMODULE.config;
+package com.broadleafcommerce.mymodule.config;
 
-import org.broadleafcommerce.common.config.DefaultOrderFrameworkCommonClasspathPropertySource;
+import org.broadleafcommerce.common.module.BroadleafModuleRegistration;
 
 /**
- * Created by Brandon Hines on 3/28/17.
+ * @author
  */
-public class MYMODULEProperties extends DefaultOrderFrameworkCommonClasspathPropertySource {
+public class MyModuleModuleRegistration implements BroadleafModuleRegistration {
 
+    public static final String MODULE_NAME = "My Module";
+    
     @Override
-    public String getClasspathFolder() {
-        return "config/bc/MYMODULE/";
+    public String getModuleName() {
+        return MODULE_NAME;
     }
 
 }

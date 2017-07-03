@@ -1,2 +1,2 @@
-# MYMODULE
+# My Module
 
