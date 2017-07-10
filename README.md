@@ -47,21 +47,19 @@ This requires an administrator account within Nexus.
 1. Go to [the Broadleaf Nexus](http://nexus.broadleafcommerce.org/nexus/index.html) and log in
 2. Click on 'Repositories' to the left
 3. Create a Releases repository
-3. Hit 'Add -> Hosted Repository' at the top and then in the form that appears at the bottom fill out the following
-    
-    a. **Repository ID** - usually `MYMODULE-releases` all lowercase
-    b. **Repository Name** - Usually `MYMODULE Releases` in correctly-spaced capitalization
-    c. Leave all other defaults
-    d. Hit 'Save'
+4. Hit 'Add -> Hosted Repository' at the top and then in the form that appears at the bottom fill out the following
+  - **Repository ID** - usually `MYMODULE-releases` all lowercase
+  - **Repository Name** - Usually `MYMODULE Releases` in correctly-spaced capitalization
+  - Leave all other defaults
+  - Hit 'Save'
 
 5. Now create a Snapshots repository
-    
-    a. Hit 'Add -> Hosted Repository' to add another repo
-    b. **Repository ID** - usually `MYMODULE-snapshots` all lowercase
-    c. **Repository Name** - usually `MYMODULE Snapshots` in correctly-spaced capitalization
-    d. **Repository Policy** - Snapshot (this changes the **Deployment Policy** to 'Allow Redeploy')
-    e. leave everything else
-    f. Hit 'Save'
+  - Hit 'Add -> Hosted Repository' to add another repo
+  - **Repository ID** - usually `MYMODULE-snapshots` all lowercase
+  - **Repository Name** - usually `MYMODULE Snapshots` in correctly-spaced capitalization
+  - **Repository Policy** - Snapshot (this changes the **Deployment Policy** to 'Allow Redeploy')
+  - leave everything else
+  - Hit 'Save'
 
 ### Validate that the `<scm>` section of the `pom.xml` is correct
 
